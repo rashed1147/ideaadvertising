@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --red: #E4212B;
+  --yellow: #FBB33C;
+  --green: #6FA84B;
+  --white: #FFFFFF;
+  --black: #141414;
+  --paper: #FBF9F5;
+  --ink: #232019;
+  --muted: #6B6558;
+  --border: #ECE7DA;
+}
+
+@layer base {
+  body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Baloo Da 2', sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+}
+
+/* 5-Color Swatch Strip */
+.swatch-strip {
+  display: flex;
+  height: 6px;
+  width: 100%;
+}
+.swatch-strip span {
+  flex: 1;
+}
+.swatch-strip .s-red { background: var(--red); }
+.swatch-strip .s-yellow { background: var(--yellow); }
+.swatch-strip .s-green { background: var(--green); }
+.swatch-strip .s-white { background: var(--white); border-top: 1px solid #EEE; border-bottom: 1px solid #EEE; }
+.swatch-strip .s-black { background: var(--black); }
+
+/* Custom smooth transitions */
+.smooth-hover {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Floating WhatsApp pulsing indicator */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(111, 168, 75, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 14px rgba(111, 168, 75, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(111, 168, 75, 0); }
+}
+
+.pulse-wa {
+  animation: pulse-ring 2.5s infinite;
+}
